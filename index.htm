@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Generator Skill</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="kotak-mesin">
+        <h1>Generator Skill Unik</h1>
+
+        <p>
+            Masukkan namamu untuk melihat skill tersembunyimu
+        </p>
+
+        <input
+        type="text"
+        id="namaInput"
+        placeholder="Ketik Namamu..."
+        >
+
+        <button onclick="cekSkill()">
+            Cek Sekarang!
+        </button>
+
+        <h2 id="hasilSkill">
+         Skill belum terdeteksi...
+         </h2>
+         <img
+        id="fotoSkill"
+        src="https://placehold.co/200x200?text=?"
+        width="400">
+      </div> 
+      <script>
+        function cekSkill() {
+          let nama = document.getElementById("namaInput").value;
+          let daftarSkill = [
+            "reality weaving",
+            "dream sculpting",
+            "time echo",
+            "memory garden",
+            "soul resonance",
+            "color manifestation",
+            "atmokinesis",
+            "silence control",
+            ];
+
+          let daftarGambar = [
+            "link gambar 1.jpg",
+            "link gambar 2.jpg",    
+            "link gambar 3.jpg",
+            "link gambar 4.jpg",
+            "link gambar 5.jpg",
+            "link 6.jpg",
+            "link gambar 7.jpg",
+            "link gambar 8.jpg",  
+          ];
+            let acak= Math.floor(Math.random() * daftarSkill.length);
+            let skillPilihan = daftarSkill[acak];
+            let gambarPilihan = daftarGambar[acak];
+            document.getElementById("hasilSkill").innerHTML = nama + " skill unikmu: " + skillPilihan;
+            document.getElementById("fotoSkill").src = gambarPilihan;
+        }
+      </script>
+      
+
+    </body>
+</html>
